@@ -19,11 +19,12 @@ public class BookService implements IBookService {
 //    @Autowired(required = true)
 //    MemberRepository memberRepository;
 
-    BookRepository bookRepository;
     @Autowired(required = true)
-    public BookService(BookRepository repo) {
-        this.bookRepository = repo;
-    }
+    BookRepository bookRepository;
+//    @Autowired(required = true)
+//    public BookService(BookRepository repo) {
+//        this.bookRepository = repo;
+//    }
 
     //
     @Transactional

@@ -15,14 +15,15 @@ import java.util.List;
 @RequestMapping("/book")
 public class BookController {
 
-    private final BookService bookService;
-
     @Autowired
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
+    private BookService bookService;
+
+//    @Autowired
+//    public BookController(BookService bookService) {
+//        this.bookService = bookService;
+//    }
     @GetMapping("/")
-    public String geter(){
+    public String getAllBooks(){
         return "asasdasd";
     }
 

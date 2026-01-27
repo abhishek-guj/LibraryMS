@@ -1,14 +1,13 @@
 package com.example.LibraryMS.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name="BorrowRecord")
 public class BorrowRecord {
 
 
@@ -21,14 +20,16 @@ public class BorrowRecord {
     private Date returnDate;
     private boolean isBorrowed;
 
-    private Book book;
-    private Member member;
-
     @ManyToOne
-    private List<Book> books = new ArrayList<>();
+    @JoinColumn(name="book_id")
+    private Book book;
+    @ManyToOne
+    @JoinColumn(name="member_id")
+    private Member member;
 
 
     // getter setters
+
     public Long getId() {
         return id;
     }
@@ -75,13 +76,5 @@ public class BorrowRecord {
 
     public void setMember(Member member) {
         this.member = member;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
     }
 }
