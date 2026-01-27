@@ -1,24 +1,35 @@
 package com.example.LibraryMS.controller;
 
 
+import com.example.LibraryMS.entities.Book;
 import com.example.LibraryMS.repository.BookRepository;
+import com.example.LibraryMS.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/book")
 public class BookController {
-//    @Autowired
-//    BookRepository bookRepository;
 
+    private final BookService bookService;
 
+    @Autowired
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
     @GetMapping("/")
-//    public List<Book> getHealth() {
-    public String getHealth() {
-//        Book b = new Book();
-//        return bookService.getAllBooks();
-        return "asada";
+    public String geter(){
+        return "asasdasd";
+    }
+
+    @GetMapping("/a")
+    public List<Book> getHealth() {
+
+        return bookService.getAllBooks();
+
     }
 }

@@ -7,11 +7,12 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-//@ComponentScan(basePackages={"com.example.LibraryMS","com.example.LibraryMS.repository"})
+@ComponentScan(basePackages = {"com.example.LibraryMS.repository"})
+@EnableJpaRepositories(basePackages = "com.example.LibraryMS.repository")
 public class LibraryMsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LibraryMsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(LibraryMsApplication.class, args);
+    }
 
 }

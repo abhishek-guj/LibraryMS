@@ -3,5 +3,5 @@ package com.example.LibraryMS.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LibraryService {
+public class LibraryService implements com.example.LibraryMS.services.interfaces.ILibraryService {
 }
